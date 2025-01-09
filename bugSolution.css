@@ -1,0 +1,36 @@
+/* bugSolution.css */
+
+/* Correct unit handling in calc() */
+.correct-calc {
+  width: calc(100% - 10px);
+}
+
+/* Correct use of parentheses for complex calculations */
+.correct-parentheses {
+  width: calc((100% - 20px) / 2);
+}
+
+/* Correct use of units and explicit conversion for different unit types */
+.correct-units {
+  width: calc(100% - 2em);
+  /* If you need to mix units, make sure they're compatible and correctly converted*/
+  height: calc(50vh - 100px); /*vh and px can be mixed*/
+}
+
+/*Avoid multiple nested calc() for better readability and performance */
+.correct-nesting {
+  width: 50%;
+  margin-left: 25%;
+  /* better than using calc multiple times in a single declaration*/
+}
+
+/*Example of incorrect implementation*/
+.incorrect-calc {
+  width: calc(100% - 10); /* Missing units! */
+}
+.incorrect-parentheses {
+  width: calc(100% - (20px / 2) );/*Incorrect parenthesis placement resulting to unexpected behavior */
+}
+.incorrect-units {
+  width: calc(100px + 2em);/*mixing units without proper conversion */
+}
